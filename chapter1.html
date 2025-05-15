@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Variables - Eco Techno Leader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .code-block {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            margin: 10px 0;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .copy-btn:hover {
+            background: #2980b9;
+        }
+        .output {
+            background: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 10px 0;
+        }
+        .nav-links {
+            margin: 20px 0;
+        }
+        .nav-links a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+        .nav-links a:hover {
+            color: #2980b9;
+        }
+        .quote {
+            font-style: italic;
+            color: #555;
+            text-align: center;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 1: Variables</h1>
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter2.html">Chapter Selanjutnya</a>
+        </div>
+
+        <h2>Kasus Nyata: Menghitung Jumlah Panel Surya untuk Eco Techno Leader</h2>
+        <p>Eco Techno Leader sedang merancang proyek panel surya untuk desa terpencil. Kita perlu menyimpan data seperti jumlah panel surya, kapasitas per panel, dan total energi yang dihasilkan. Nah, di sini kita akan belajar cara menyimpan data pake <strong>variabel</strong>.</p>
+
+        <h3>Level Beginner: Membuat Variabel Dasar</h3>
+        <p>Variabel itu kayak kotak buat nyimpan data. Kita akan buat variabel untuk jumlah panel surya dan kapasitasnya.</p>
+        <div class="code-block">
+            <pre><code>jumlah_panel = 50  # jumlah panel surya
+kapasitas_per_panel = 300  # kapasitas dalam watt
+print(jumlah_panel)
+print(kapasitas_per_panel)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Cara Copy-Paste ke VS Code:</strong></p>
+        <ol>
+            <li>Klik tombol "Copy" di atas.</li>
+            <li>Buka VS Code, buat file baru (tekan Ctrl+N), lalu paste (Ctrl+V).</li>
+            <li>Simpan file dengan nama <code>panel_surya.py</code> (tekan Ctrl+S, tambahkan ekstensi .py).</li>
+            <li>Buka terminal di VS Code (tekan Ctrl+`, atau klik Terminal > New Terminal).</li>
+            <li>Ketik <code>python panel_surya.py</code> lalu Enter untuk jalankan.</li>
+        </ol>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            50<br>
+            300
+        </div>
+        <p><strong>Do:</strong> Gunakan nama variabel yang jelas dan deskriptif, seperti <code>jumlah_panel</code>, biar gampang dimengerti.</p>
+        <p><strong>Don't:</strong> Jangan pake nama yang dimulai dengan angka (misalnya <code>1panel</code>) atau pake spasi (misalnya <code>jumlah panel</code>).</p>
+
+        <h3>Level Intermediate: Menghitung Total Energi</h3>
+        <p>Sekarang kita hitung total energi yang dihasilkan dari semua panel surya.</p>
+        <div class="code-block">
+            <pre><code>jumlah_panel = 50
+kapasitas_per_panel = 300
+total_energi = jumlah_panel * kapasitas_per_panel
+print("Total energi yang dihasilkan:", total_energi, "watt")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Total energi yang dihasilkan: 15000 watt
+        </div>
+        <p><strong>Do:</strong> Gunakan operator seperti <code>*</code> untuk perhitungan sederhana.</p>
+        <p><strong>Don't:</strong> Jangan lupa simpan hasil perhitungan ke variabel baru kalau mau dipake lagi nanti.</p>
+
+        <h3>Level Advanced: Menggunakan Variabel untuk Perhitungan Dinamis</h3>
+        <p>Kita tambahin variabel untuk efisiensi panel surya dan hitung energi bersih yang dihasilkan.</p>
+        <div class="code-block">
+            <pre><code>jumlah_panel = 50
+kapasitas_per_panel = 300
+efisiensi = 0.85  # efisiensi panel 85%
+total_energi = jumlah_panel * kapasitas_per_panel
+energi_bersih = total_energi * efisiensi
+print("Total energi:", total_energi, "watt")
+print("Energi bersih setelah efisiensi:", energi_bersih, "watt")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Total energi: 15000 watt<br>
+            Energi bersih setelah efisiensi: 12750.0 watt
+        </div>
+        <p><strong>Do:</strong> Gunakan variabel untuk nilai yang bisa berubah-ubah, seperti efisiensi, biar gampang diupdate.</p>
+        <p><strong>Don't:</strong> Jangan hardcode nilai langsung di perhitungan (misalnya <code>total_energi * 0.85</code>) tanpa variabel, soalnya susah kalau mau ganti nilai.</p>
+
+        <h2>Comments in Python</h2>
+        <p>Komentar dimulai dengan <code>#</code> dan gak dibaca sama Python. Berguna buat kasih catatan.</p>
+        <div class="code-block">
+            <pre><code># Proyek panel surya Eco Techno Leader
+jumlah_panel = 50  # jumlah panel surya
+kapasitas_per_panel = 300  # kapasitas dalam watt
+print("Jumlah panel:", jumlah_panel)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Jumlah panel: 50
+        </div>
+        <p><strong>Do:</strong> Tulis komentar yang jelas biar orang lain (atau kamu sendiri di masa depan) paham.</p>
+        <p><strong>Don't:</strong> Jangan tulis komentar yang gak perlu, seperti <code># print</code> di atas perintah print, soalnya udah jelas.</p>
+
+        <div class="quote">
+            "Belajarlah dengan ikhlas, karena ilmu adalah cahaya yang diberikan Tuhan untuk menerangi jalan kita menuju kemandirian. 🌟"
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter2.html">Chapter Selanjutnya</a>
+        </div>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
