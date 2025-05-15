@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 12: Python Functions - Eco Techno Leader</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        h1, h2, h3 { color: #2c3e50; }
+        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 10px; border-radius: 5px; position: relative; margin: 10px 0; }
+        .copy-btn { position: absolute; top: 5px; right: 5px; background: #3498db; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+        .copy-btn:hover { background: #2980b9; }
+        .output { background: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; margin: 10px 0; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        .nav-links a:hover { color: #2980b9; }
+        .quote { font-style: italic; color: #555; text-align: center; margin: 20px 0; }
+        footer { text-align: center; margin-top: 40px; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 12: Python Functions</h1>
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter11.html">Chapter Sebelumnya</a>
+            <a href="chapter13.html">Chapter Selanjutnya</a>
+        </div>
+
+        <h2>Kasus Nyata: Membuat Fungsi untuk Menghitung Efisiensi Proyek Eco Techno Leader</h2>
+        <p>Eco Techno Leader perlu fungsi untuk menghitung efisiensi proyek energi keterbaruan berdasarkan input dan output energi. Kita akan gunakan <code>function</code> untuk ini.</p>
+
+        <h3>Level Beginner: Membuat Fungsi Sederhana</h3>
+        <p>Fungsi adalah blok kode yang bisa dipake ulang.</p>
+        <div class="code-block">
+            <pre><code>def hitung_efisiensi():
+    energi_input = 1000
+    energi_output = 850
+    efisiensi = (energi_output / energi_input) * 100
+    return efisiensi
+
+efisiensi_proyek = hitung_efisiensi()
+print("Efisiensi proyek:", efisiensi_proyek, "%")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Efisiensi proyek: 85.0 %
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>return</code> untuk mengembalikan hasil dari fungsi.</p>
+        <p><strong>Don't:</strong> Jangan lupa definisikan fungsi sebelum dipanggil.</p>
+
+        <h3>Level Intermediate: Fungsi dengan Argumen</h3>
+        <p>Kita buat fungsi yang bisa nerima input dinamis.</p>
+        <div class="code-block">
+            <pre><code>def hitung_efisiensi(energi_input, energi_output):
+    efisiensi = (energi_output / energi_input) * 100
+    return efisiensi
+
+proyek1 = hitung_efisiensi(1000, 850)
+proyek2 = hitung_efisiensi(2000, 1800)
+print(f"Efisiensi Proyek 1: {proyek1}%")
+print(f"Efisiensi Proyek 2: {proyek2}%")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Efisiensi Proyek 1: 85.0%<br>
+            Efisiensi Proyek 2: 90.0%
+        </div>
+        <p><strong>Do:</strong> Gunakan argumen untuk bikin fungsi fleksibel.</p>
+        <p><strong>Don't:</strong> Jangan pake argumen tanpa default value kalau fungsi sering dipanggil tanpa argumen tertentu (pake default value aja).</p>
+
+        <h3>Level Advanced: Fungsi dengan Lambda dan Argumen Opsional</h3>
+        <p>Kita buat fungsi kompleks dengan lambda untuk analisis lebih lanjut.</p>
+        <div class="code-block">
+            <pre><code>def hitung_efisiensi(energi_input, energi_output, faktor_kerugian=0):
+    efisiensi = (energi_output / energi_input) * 100
+    efisiensi_bersih = efisiensi - faktor_kerugian
+    return efisiensi_bersih
+
+# Lambda untuk kategori efisiensi
+kategori = lambda efisiensi: "Baik" if efisiensi >= 80 else "Kurang"
+proyek1 = hitung_efisiensi(1000, 850, 5)
+print(f"Efisiensi Proyek 1: {proyek1}%, Kategori: {kategori(proyek1)}")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Efisiensi Proyek 1: 80.0%, Kategori: Baik
+        </div>
+        <p><strong>Do:</strong> Gunakan argumen opsional (default) dan lambda untuk fungsi sederhana.</p>
+        <p><strong>Don't:</strong> Jangan pake lambda untuk logika yang terlalu kompleks, pake fungsi biasa aja.</p>
+
+        <div class="quote">
+            "Setiap fungsi yang kamu buat adalah solusi untuk dunia yang lebih baik. Bersyukurlah kepada Tuhan atas kemampuan untuk berkarya! ⚡"
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter11.html">Chapter Sebelumnya</a>
+            <a href="chapter13.html">Chapter Selanjutnya</a>
+        </div>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
