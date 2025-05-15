@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Python Lists - Eco Techno Leader</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        h1, h2, h3 { color: #2c3e50; }
+        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 10px; border-radius: 5px; position: relative; margin: 10px 0; }
+        .copy-btn { position: absolute; top: 5px; right: 5px; background: #3498db; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+        .copy-btn:hover { background: #2980b9; }
+        .output { background: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; margin: 10px 0; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        .nav-links a:hover { color: #2980b9; }
+        .quote { font-style: italic; color: #555; text-align: center; margin: 20px 0; }
+        footer { text-align: center; margin-top: 40px; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 8: Python Lists</h1>
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter7.html">Chapter Sebelumnya</a>
+            <a href="chapter9.html">Chapter Selanjutnya</a>
+        </div>
+
+        <h2>Kasus Nyata: Mengelola Daftar Lokasi Proyek Energi Keterbaruan Eco Techno Leader</h2>
+        <p>Eco Techno Leader punya daftar lokasi proyek energi keterbaruan yang perlu dikelola, seperti menambah lokasi baru, menghapus lokasi, atau menganalisis data lokasi. Kita akan gunakan <code>list</code> untuk ini.</p>
+
+        <h3>Level Beginner: Membuat dan Menampilkan List</h3>
+        <p>List adalah daftar yang bisa diubah. Kita buat daftar lokasi proyek.</p>
+        <div class="code-block">
+            <pre><code>lokasi_proyek = ["Desa Makmur", "Desa Sejahtera", "Desa Hijau"]
+print("Daftar lokasi proyek:", lokasi_proyek)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Cara Copy-Paste ke VS Code:</strong></p>
+        <ol>
+            <li>Klik tombol "Copy" di atas.</li>
+            <li>Buka VS Code, buat file baru (Ctrl+N), lalu paste (Ctrl+V).</li>
+            <li>Simpan file dengan nama <code>lokasi_proyek.py</code> (Ctrl+S, tambahkan ekstensi .py).</li>
+            <li>Buka terminal di VS Code (Ctrl+`, atau klik Terminal > New Terminal).</li>
+            <li>Ketik <code>python lokasi_proyek.py</code> lalu Enter untuk jalankan.</li>
+        </ol>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Daftar lokasi proyek: ['Desa Makmur', 'Desa Sejahtera', 'Desa Hijau']
+        </div>
+        <p><strong>Do:</strong> Gunakan list untuk data yang bisa berubah-ubah.</p>
+        <p><strong>Don't:</strong> Jangan pake list kalau datanya gak perlu diubah (pake <code>tuple</code> aja).</p>
+
+        <h3>Level Intermediate: Mengubah dan Mengulang List</h3>
+        <p>Kita tambah lokasi baru dan ulang untuk menampilkan.</p>
+        <div class="code-block">
+            <pre><code>lokasi_proyek = ["Desa Makmur", "Desa Sejahtera", "Desa Hijau"]
+lokasi_proyek.append("Desa Baru")  # tambah lokasi baru
+print("Daftar lokasi setelah ditambah:", lokasi_proyek)
+for lokasi in lokasi_proyek:
+    print(f"Proyek di {lokasi}")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Daftar lokasi setelah ditambah: ['Desa Makmur', 'Desa Sejahtera', 'Desa Hijau', 'Desa Baru']<br>
+            Proyek di Desa Makmur<br>
+            Proyek di Desa Sejahtera<br>
+            Proyek di Desa Hijau<br>
+            Proyek di Desa Baru
+        </div>
+        <p><strong>Do:</strong> Gunakan method seperti <code>append()</code> untuk tambah data ke list.</p>
+        <p><strong>Don't:</strong> Jangan pake <code>append()</code> untuk tambah banyak data sekaligus, pake <code>extend()</code>.</p>
+
+        <h3>Level Advanced: List Comprehension untuk Analisis</h3>
+        <p>Kita analisis lokasi yang namanya mengandung "Desa" dan ubah formatnya.</p>
+        <div class="code-block">
+            <pre><code>lokasi_proyek = ["Desa Makmur", "Desa Sejahtera", "Kota Hijau", "Desa Baru"]
+# List comprehension untuk lokasi yang mengandung "Desa"
+lokasi_desa = [lokasi for lokasi in lokasi_proyek if "Desa" in lokasi]
+# Ubah format jadi uppercase
+lokasi_upper = [lokasi.upper() for lokasi in lokasi_desa]
+print("Lokasi yang mengandung 'Desa':", lokasi_desa)
+print("Lokasi dalam uppercase:", lokasi_upper)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Lokasi yang mengandung 'Desa': ['Desa Makmur', 'Desa Sejahtera', 'Desa Baru']<br>
+            Lokasi dalam uppercase: ['DESA MAKMUR', 'DESA SEJAHTERA', 'DESA BARU']
+        </div>
+        <p><strong>Do:</strong> Gunakan list comprehension untuk bikin kode lebih singkat dan efisien.</p>
+        <p><strong>Don't:</strong> Jangan pake list comprehension kalau logikanya terlalu kompleks, biar gak susah dibaca.</p>
+
+        <div class="quote">
+            "Setiap daftar yang kamu kelola adalah langkah menuju tatanan yang lebih baik. Bersyukurlah kepada Tuhan atas kemampuan untuk terus belajar! 🌍"
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter7.html">Chapter Sebelumnya</a>
+            <a href="chapter9.html">Chapter Selanjutnya</a>
+        </div>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
