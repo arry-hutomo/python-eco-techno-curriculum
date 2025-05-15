@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Data Types - Eco Techno Leader</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        h1, h2, h3 { color: #2c3e50; }
+        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 10px; border-radius: 5px; position: relative; margin: 10px 0; }
+        .copy-btn { position: absolute; top: 5px; right: 5px; background: #3498db; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+        .copy-btn:hover { background: #2980b9; }
+        .output { background: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; margin: 10px 0; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        .nav-links a:hover { color: #2980b9; }
+        .quote { font-style: italic; color: #555; text-align: center; margin: 20px 0; }
+        footer { text-align: center; margin-top: 40px; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 2: Data Types</h1>
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter1.html">Chapter Sebelumnya</a>
+            <a href="chapter3.html">Chapter Selanjutnya</a>
+        </div>
+
+        <h2>Kasus Nyata: Menyimpan Data Proyek Turbin Angin Eco Techno Leader</h2>
+        <p>Eco Techno Leader sedang mengelola proyek turbin angin untuk energi keterbaruan. Kita perlu menyimpan data seperti jumlah turbin, kapasitas, status proyek, dan daftar lokasi. Yuk, kita pelajari berbagai tipe data di Python!</p>
+
+        <h3>Level Beginner: Mengenal Tipe Data Dasar</h3>
+        <p>Python punya beberapa tipe data dasar: <code>int</code>, <code>float</code>, <code>str</code>, dan <code>bool</code>.</p>
+        <div class="code-block">
+            <pre><code>jumlah_turbin = 10  # int: bilangan bulat
+kapasitas_turbin = 2.5  # float: bilangan desimal
+nama_proyek = "Turbin Angin Desa"  # str: teks
+proyek_aktif = True  # bool: benar/salah
+print(jumlah_turbin)
+print(kapasitas_turbin)
+print(nama_proyek)
+print(proyek_aktif)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            10<br>
+            2.5<br>
+            Turbin Angin Desa<br>
+            True
+        </div>
+        <p><strong>Do:</strong> Pilih tipe data yang sesuai dengan kebutuhan (misalnya, <code>int</code> untuk jumlah, <code>str</code> untuk teks).</p>
+        <p><strong>Don't:</strong> Jangan campur tipe data yang gak cocok (misalnya, <code>jumlah_turbin = "10"</code> pake string untuk angka yang perlu dihitung).</p>
+
+        <h3>Level Intermediate: Menggunakan Tipe Data Koleksi</h3>
+        <p>Selain tipe dasar, Python punya tipe koleksi seperti <code>list</code>, <code>tuple</code>, <code>set</code>, dan <code>dict</code>.</p>
+        <div class="code-block">
+            <pre><code>lokasi_turbin = ["Desa A", "Desa B", "Desa C"]  # list: daftar yang bisa diubah
+hari_operasi = ("Senin", "Rabu", "Jumat")  # tuple: daftar yang gak bisa diubah
+tipe_turbin = {"vertikal", "horizontal"}  # set: kumpulan unik
+data_proyek = {"nama": "Turbin Angin Desa", "kapasitas": 2.5}  # dict: pasangan kunci-nilai
+print(lokasi_turbin)
+print(hari_operasi)
+print(tipe_turbin)
+print(data_proyek)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            ['Desa A', 'Desa B', 'Desa C']<br>
+            ('Senin', 'Rabu', 'Jumat')<br>
+            {'vertikal', 'horizontal'}<br>
+            {'nama': 'Turbin Angin Desa', 'kapasitas': 2.5}
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>list</code> kalau datanya bisa berubah, <code>tuple</code> kalau gak perlu diubah.</p>
+        <p><strong>Don't:</strong> Jangan pake <code>set</code> kalau urutan data penting, soalnya set gak urut.</p>
+
+        <h3>Level Advanced: Menggabungkan Tipe Data untuk Analisis</h3>
+        <p>Kita gabungkan tipe data untuk analisis proyek turbin angin.</p>
+        <div class="code-block">
+            <pre><code>jumlah_turbin = 10
+kapasitas_turbin = 2.5
+lokasi_turbin = ["Desa A", "Desa B", "Desa C"]
+total_kapasitas = jumlah_turbin * kapasitas_turbin
+data_proyek = {"jumlah_turbin": jumlah_turbin, "total_kapasitas_mw": total_kapasitas, "lokasi": lokasi_turbin}
+print("Data proyek:", data_proyek)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Data proyek: {'jumlah_turbin': 10, 'total_kapasitas_mw': 25.0, 'lokasi': ['Desa A', 'Desa B', 'Desa C']}
+        </div>
+        <p><strong>Do:</strong> Gabungkan tipe data untuk bikin struktur data yang kompleks tapi terorganisir.</p>
+        <p><strong>Don't:</strong> Jangan pake tipe data yang salah (misalnya, nyimpan daftar lokasi pake string, bukan list).</p>
+
+        <div class="quote">
+            "Setiap langkah kecil yang kamu ambil dengan ikhtiar adalah cara Tuhan mengajarkan kita untuk mandiri dan berkarya. Terus semangat! 🌱"
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter1.html">Chapter Sebelumnya</a>
+            <a href="chapter3.html">Chapter Selanjutnya</a>
+        </div>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
