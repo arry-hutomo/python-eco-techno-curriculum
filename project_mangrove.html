@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT_MANGROVE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .code-block {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            margin: 10px 0;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .copy-btn:hover {
+            background: #2980b9;
+        }
+        .output {
+            background: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 10px 0;
+        }
+        .quote {
+            font-style: italic;
+            color: #555;
+            text-align: center;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PROJECT_MANGROVE 🌱</h1>
+        <p>Halo teman-teman! Selamat datang di proyek **Sistem Manajemen Biodiversitas Mangrove** oleh **BioMac**, dibuat oleh **Arry Hutomo** dari **Eco Techno Leader**! Proyek ini dirancang khusus untuk membantu komunitas seperti BioMac dalam melestarikan ekosistem mangrove dengan pendekatan **disruptive sustainability**. Kita bakal bikin sistem yang gampang, elegan, dan bermanfaat banget buat pelestarian biodiversitas mangrove. Yuk, kita mulai petualangan hijau ini! 🚀</p>
+
+        <h2>Kasus Nyata: BioMac dan Pelestarian Mangrove</h2>
+        <p>**BioMac Biodiversity Mangrove** adalah komunitas yang fokus melestarikan ekosistem mangrove untuk mendukung keanekaragaman hayati dan keberlanjutan lingkungan. Mangrove adalah ekosistem unik di perbatasan darat dan laut, biasanya di daerah tropis seperti Indonesia. BioMac ingin membuat sistem untuk:</p>
+        <ul>
+            <li>Menyimpan data spesies flora dan fauna di ekosistem mangrove.</li>
+            <li>Menghitung potensi karbon yang diserap oleh mangrove.</li>
+            <li>Memberikan rekomendasi aksi pelestarian berdasarkan data user.</li>
+        </ul>
+        <p>Kita akan gunakan Python dengan konsep **variables** (Chapter 1) dan **OOP** (Chapter 15) untuk bikin sistem ini.</p>
+
+        <h2>Pengetahuan Detail tentang Mangrove</h2>
+        <h3>Apa Itu Mangrove?</h3>
+        <p>Mangrove adalah tanaman yang tumbuh di daerah pasang surut, seperti muara sungai atau pantai. Di Indonesia, mangrove sering disebut "hutan bakau" dan banyak ditemukan di pesisir Sumatera, Kalimantan, dan Papua. Mangrove punya akar unik seperti akar napas (pneumatophores) yang membantu mereka bernapas di tanah berlumpur yang miskin oksigen.</p>
+
+        <h3>Manfaat Mangrove</h3>
+        <p>Mangrove punya manfaat luar biasa, antara lain:</p>
+        <ul>
+            <li><strong>Pelindung Pantai:</strong> Akar mangrove mencegah erosi dan melindungi dari tsunami.</li>
+            <li><strong>Penyerap Karbon:</strong> Mangrove menyerap karbon 4 kali lebih banyak dibanding hutan tropis.</li>
+            <li><strong>Keanekaragaman Hayati:</strong> Rumah bagi spesies seperti burung migran, kepiting, dan ikan.</li>
+            <li><strong>Sumber Ekonomi:</strong> Kayu mangrove bisa jadi bahan bangunan, dan mendukung perikanan.</li>
+            <li><strong>Penyaring Air:</strong> Mangrove menyaring polutan, menjaga kualitas air pesisir.</li>
+        </ul>
+
+        <h3>Tantangan dan Aksi Pelestarian</h3>
+        <p>Mangrove terancam oleh deforestasi, polusi, dan perubahan iklim. BioMac berupaya melestarikan mangrove dengan menanam kembali, edukasi masyarakat, dan monitoring biodiversitas. Proyek ini akan membantu BioMac mendata biodiversitas dan menghitung potensi karbon untuk aksi pelestarian yang lebih efektif.</p>
+
+        <h2>Kode Python: Sistem Manajemen Biodiversitas Mangrove</h2>
+        <p>Berikut adalah kode Python untuk sistem ini. Kode ini agak advanced karena menggunakan **variables** dan **OOP** dengan input dari user.</p>
+        <div class="code-block">
+            <pre><code>class MangroveEcosystem:
+    def __init__(self, nama_lokasi):
+        self.nama_lokasi = nama_lokasi
+        self.spesies_flora = []
+        self.spesies_fauna = []
+        self.luas_area = 0  # dalam hektar
+        self.karbon_per_hektar = 150  # ton karbon per hektar (rata-rata mangrove)
+
+    def tambah_spesies_flora(self, spesies):
+        self.spesies_flora.append(spesies)
+        print(f"Spesies flora '{spesies}' berhasil ditambahkan di {self.nama_lokasi}.")
+
+    def tambah_spesies_fauna(self, spesies):
+        self.spesies_fauna.append(spesies)
+        print(f"Spesies fauna '{spesies}' berhasil ditambahkan di {self.nama_lokasi}.")
+
+    def set_luas_area(self, luas):
+        if luas <= 0:
+            print("Luas area harus lebih dari 0 hektar!")
+        else:
+            self.luas_area = luas
+            print(f"Luas area {self.nama_lokasi} berhasil diatur menjadi {self.luas_area} hektar.")
+
+    def hitung_potential_karbon(self):
+        total_karbon = self.luas_area * self.karbon_per_hektar
+        return total_karbon
+
+    def rekomendasi_aksi(self):
+        if len(self.spesies_flora) < 3 or len(self.spesies_fauna) < 3:
+            return "Segera lakukan penanaman mangrove tambahan dan monitoring biodiversitas!"
+        elif self.luas_area < 10:
+            return "Perluas area mangrove untuk meningkatkan penyerapan karbon dan biodiversitas."
+        else:
+            return "Ekosistem mangrove sehat, teruskan monitoring dan edukasi masyarakat!"
+
+# Input dari user
+print("=== Sistem Manajemen Biodiversitas Mangrove oleh BioMac ===")
+nama_lokasi = input("Masukkan nama lokasi mangrove (contoh: Hutan Bakau Desa Sejahtera): ")
+mangrove = MangroveEcosystem(nama_lokasi)
+
+# Input luas area
+luas = float(input("Masukkan luas area mangrove (dalam hektar, contoh: 15): "))
+mangrove.set_luas_area(luas)
+
+# Input spesies flora
+print("Masukkan 3 spesies flora yang ada di lokasi (contoh: Rhizophora, Avicennia, Sonneratia):")
+for i in range(3):
+    spesies = input(f"Spesies flora ke-{i+1}: ")
+    mangrove.tambah_spesies_flora(spesies)
+
+# Input spesies fauna
+print("Masukkan 3 spesies fauna yang ada di lokasi (contoh: Kepiting Bakau, Burung Migran, Ikan):")
+for i in range(3):
+    spesies = input(f"Spesies fauna ke-{i+1}: ")
+    mangrove.tambah_spesies_fauna(spesies)
+
+# Menampilkan hasil
+print("\n=== Laporan Biodiversitas Mangrove ===")
+print(f"Lokasi: {mangrove.nama_lokasi}")
+print(f"Luas Area: {mangrove.luas_area} hektar")
+print(f"Spesies Flora: {mangrove.spesies_flora}")
+print(f"Spesies Fauna: {mangrove.spesies_fauna}")
+print(f"Potensi Karbon Diserap: {mangrove.hitung_potential_karbon()} ton")
+print(f"Rekomendasi Aksi: {mangrove.rekomendasi_aksi()}")
+            </code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+
+        <h2>Penjelasan Langkah demi Langkah</h2>
+        <h3>Langkah 1: Membuat Class MangroveEcosystem</h3>
+        <p>Kita menggunakan <strong>OOP (Chapter 15)</strong> untuk membuat class <code>MangroveEcosystem</code> yang merepresentasikan ekosistem mangrove. Atribut seperti <code>nama_lokasi</code>, <code>spesies_flora</code>, dan <code>luas_area</code> disimpan sebagai <strong>variables (Chapter 1)</strong>.</p>
+        <p><strong>Do:</strong> Gunakan <code>__init__</code> untuk inisialisasi atribut class.</p>
+        <p><strong>Don't:</strong> Jangan lupa pake <code>self</code> untuk akses atribut dalam method.</p>
+
+        <h3>Langkah 2: Method untuk Menambah Spesies</h3>
+        <p>Method <code>tambah_spesies_flora</code> dan <code>tambah_spesies_fauna</code> menggunakan list untuk menyimpan data spesies.</p>
+        <p><strong>Do:</strong> Gunakan <code>append()</code> untuk menambah elemen ke list.</p>
+        <p><strong>Don't:</strong> Jangan pake list untuk data yang gak boleh diubah (pake tuple kalau perlu).</p>
+
+        <h3>Langkah 3: Method untuk Menghitung Potensi Karbon</h3>
+        <p>Method <code>hitung_potential_karbon</code> menghitung total karbon berdasarkan luas area dan karbon per hektar.</p>
+        <p><strong>Do:</strong> Simpan konstanta seperti <code>karbon_per_hektar</code> sebagai atribut class.</p>
+        <p><strong>Don't:</strong> Jangan hardcode nilai konstanta di dalam method, biar gampang diubah.</p>
+
+        <h3>Langkah 4: Method untuk Rekomendasi Aksi</h3>
+        <p>Method <code>rekomendasi_aksi</code> memberikan saran berdasarkan jumlah spesies dan luas area.</p>
+        <p><strong>Do:</strong> Gunakan kondisi logika untuk memberikan rekomendasi yang relevan.</p>
+        <p><strong>Don't:</strong> Jangan buat logika terlalu rumit, biar user gak bingung.</p>
+
+        <h3>Langkah 5: Input dari User</h3>
+        <p>Kita minta user untuk menginput nama lokasi, luas area, spesies flora, dan fauna.</p>
+        <p><strong>Do:</strong> Gunakan <code>input()</code> untuk interaksi dengan user dan konversi ke tipe data yang sesuai (misalnya <code>float()</code> untuk luas).</p>
+        <p><strong>Don't:</strong> Jangan lupa tangani error input (meskipun ini belum kita bahas di sini, akan lebih baik pakai try-except kalau sudah belajar Chapter 14).</p>
+
+        <h3>Langkah 6: Menjalankan dan Melihat Hasil</h3>
+        <p>Jalankan kode di VS Code:</p>
+        <ol>
+            <li>Klik tombol "Copy" di atas.</li>
+            <li>Buka VS Code, buat file baru bernama <code>mangrove_system.py</code>.</li>
+            <li>Paste kode, lalu simpan (Ctrl+S).</li>
+            <li>Buka terminal di VS Code (Ctrl+`).</li>
+            <li>Ketik <code>python mangrove_system.py</code> lalu Enter.</li>
+        </ol>
+        <p><strong>Contoh Input dan Output:</strong></p>
+        <p><strong>Input:</strong></p>
+        <div class="output">
+            Masukkan nama lokasi mangrove (contoh: Hutan Bakau Desa Sejahtera): Hutan Bakau Desa Makmur<br>
+            Masukkan luas area mangrove (dalam hektar, contoh: 15): 20<br>
+            Masukkan 3 spesies flora yang ada di lokasi (contoh: Rhizophora, Avicennia, Sonneratia):<br>
+            Spesies flora ke-1: Rhizophora<br>
+            Spesies flora ke-2: Avicennia<br>
+            Spesies flora ke-3: Sonneratia<br>
+            Masukkan 3 spesies fauna yang ada di lokasi (contoh: Kepiting Bakau, Burung Migran, Ikan):<br>
+            Spesies fauna ke-1: Kepiting Bakau<br>
+            Spesies fauna ke-2: Burung Migran<br>
+            Spesies fauna ke-3: Ikan
+        </div>
+        <p><strong>Output:</strong></p>
+        <div class="output">
+            === Sistem Manajemen Biodiversitas Mangrove oleh BioMac ===<br>
+            Luas area Hutan Bakau Desa Makmur berhasil diatur menjadi 20 hektar.<br>
+            Spesies flora 'Rhizophora' berhasil ditambahkan di Hutan Bakau Desa Makmur.<br>
+            Spesies flora 'Avicennia' berhasil ditambahkan di Hutan Bakau Desa Makmur.<br>
+            Spesies flora 'Sonneratia' berhasil ditambahkan di Hutan Bakau Desa Makmur.<br>
+            Spesies fauna 'Kepiting Bakau' berhasil ditambahkan di Hutan Bakau Desa Makmur.<br>
+            Spesies fauna 'Burung Migran' berhasil ditambahkan di Hutan Bakau Desa Makmur.<br>
+            Spesies fauna 'Ikan' berhasil ditambahkan di Hutan Bakau Desa Makmur.<br>
+            <br>
+            === Laporan Biodiversitas Mangrove ===<br>
+            Lokasi: Hutan Bakau Desa Makmur<br>
+            Luas Area: 20 hektar<br>
+            Spesies Flora: ['Rhizophora', 'Avicennia', 'Sonneratia']<br>
+            Spesies Fauna: ['Kepiting Bakau', 'Burung Migran', 'Ikan']<br>
+            Potensi Karbon Diserap: 3000 ton<br>
+            Rekomendasi Aksi: Ekosistem mangrove sehat, teruskan monitoring dan edukasi masyarakat!
+        </div>
+
+        <h2>Motivasi dan Doa</h2>
+        <p><strong>Kutipan Motivasi:</strong></p>
+        <div class="quote">
+            "Setiap langkah kecil dalam melestarikan mangrove adalah cara kita bersyukur kepada Tuhan atas ciptaan-Nya yang indah. Jangan pernah menyerah, karena usahamu adalah bagian dari perubahan besar untuk dunia yang lebih hijau! 🌿"
+        </div>
+        <p><strong>Doa Umum:</strong></p>
+        <div class="quote">
+            "Ya Tuhan, kuatkan hati kami dalam belajar dan menyelesaikan proyek ini. Berikan kami keikhlasan dan ketekunan untuk terus berkarya demi menjaga bumi yang Kau ciptakan. Aamiin."
+        </div>
+
+        <h2>Untuk Komunitas BioMac</h2>
+        <p>Proyek ini dirancang untuk langsung bisa digunakan oleh komunitas **BioMac Biodiversity Mangrove** di mana saja. Kalian bisa:</p>
+        <ul>
+            <li>Mendata biodiversitas mangrove di lokasi kalian.</li>
+            <li>Menghitung potensi karbon untuk proyek carbon credit.</li>
+            <li>Menggunakan rekomendasi aksi untuk langkah pelestarian.</li>
+        </ul>
+        <p>Proyek ini simpel, elegan, dan mudah diingat, sehingga cocok untuk komunitas penggerak biodiversitas mangrove. Bersama, kita wujudkan sustainability yang berdampak! 🌍</p>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
