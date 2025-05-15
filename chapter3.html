@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Python Operators - Eco Techno Leader</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        h1, h2, h3 { color: #2c3e50; }
+        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 10px; border-radius: 5px; position: relative; margin: 10px 0; }
+        .copy-btn { position: absolute; top: 5px; right: 5px; background: #3498db; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+        .copy-btn:hover { background: #2980b9; }
+        .output { background: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; margin: 10px 0; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        .nav-links a:hover { color: #2980b9; }
+        .quote { font-style: italic; color: #555; text-align: center; margin: 20px 0; }
+        footer { text-align: center; margin-top: 40px; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 3: Python Operators</h1>
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter2.html">Chapter Sebelumnya</a>
+            <a href="chapter4.html">Chapter Selanjutnya</a>
+        </div>
+
+        <h2>Kasus Nyata: Menghitung Efisiensi Sistem Energi Keterbaruan Eco Techno Leader</h2>
+        <p>Eco Techno Leader ingin menghitung efisiensi sistem energi keterbaruan berdasarkan input dan output energi. Kita akan gunakan operator untuk perhitungan ini.</p>
+
+        <h3>Level Beginner: Arithmetic Operators</h3>
+        <p>Operator aritmatika buat perhitungan dasar:</p>
+        <div class="code-block">
+            <pre><code>energi_input = 1000  # energi input dalam kWh
+energi_output = 850  # energi output dalam kWh
+selisih = energi_input - energi_output
+print("Selisih energi:", selisih, "kWh")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Selisih energi: 150 kWh
+        </div>
+        <p><strong>Do:</strong> Gunakan operator yang tepat (<code>-</code> untuk pengurangan).</p>
+        <p><strong>Don't:</strong> Jangan lupa simpan hasil perhitungan ke variabel kalau mau dipake lagi.</p>
+
+        <h3>Level Intermediate: Assignment dan Comparison Operators</h3>
+        <p>Kita hitung efisiensi dan bandingkan dengan standar.</p>
+        <div class="code-block">
+            <pre><code>energi_input = 1000
+energi_output = 850
+efisiensi = (energi_output / energi_input) * 100  # hitung efisiensi dalam persen
+standar_efisiensi = 80
+efisiensi += 5  # tambah efisiensi dengan 5% karena perbaikan
+print("Efisiensi sistem:", efisiensi, "%")
+print("Apakah efisiensi memenuhi standar?", efisiensi >= standar_efisiensi)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Efisiensi sistem: 90.0 %<br>
+            Apakah efisiensi memenuhi standar? True
+        </div>
+        <p><strong>Do:</strong> Gunakan operator <code>/</code> untuk pembagian dan <code>*</code> untuk perkalian.</p>
+        <p><strong>Don't:</strong> Jangan lupa urutan operasi (pake tanda kurung kalau perlu, seperti <code>(energi_output / energi_input) * 100</code>).</p>
+
+        <h3>Level Advanced: Boolean Operators untuk Analisis</h3>
+        <p>Kita gunakan boolean untuk analisis lebih lanjut.</p>
+        <div class="code-block">
+            <pre><code>energi_input = 1000
+energi_output = 850
+efisiensi = (energi_output / energi_input) * 100
+standar_efisiensi = 80
+is_operational = True
+print("Apakah sistem efisien dan operasional?", efisiensi >= standar_efisiensi and is_operational)
+print("Apakah sistem perlu perbaikan?", not (efisiensi >= standar_efisiensi))</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Apakah sistem efisien dan operasional? True<br>
+            Apakah sistem perlu perbaikan? False
+        </div>
+        <p><strong>Do:</strong> Kombinasikan operator boolean (<code>and</code>, <code>or</code>, <code>not</code>) untuk analisis logika.</p>
+        <p><strong>Don't:</strong> Jangan bikin kondisi yang terlalu rumit tanpa tanda kurung, biar gak bingung.</p>
+
+        <div class="quote">
+            "Keberhasilan itu dimulai dari langkah kecil yang konsisten. Percayalah, Tuhan selalu memberi jalan bagi mereka yang berusaha! 💪"
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter2.html">Chapter Sebelumnya</a>
+            <a href="chapter4.html">Chapter Selanjutnya</a>
+        </div>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
