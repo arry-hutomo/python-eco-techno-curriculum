@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 13: Working with Files in Python - Eco Techno Leader</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        h1, h2, h3 { color: #2c3e50; }
+        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 10px; border-radius: 5px; position: relative; margin: 10px 0; }
+        .copy-btn { position: absolute; top: 5px; right: 5px; background: #3498db; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+        .copy-btn:hover { background: #2980b9; }
+        .output { background: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; margin: 10px 0; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        .nav-links a:hover { color: #2980b9; }
+        .quote { font-style: italic; color: #555; text-align: center; margin: 20px 0; }
+        footer { text-align: center; margin-top: 40px; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 13: Working with Files in Python</h1>
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter12.html">Chapter Sebelumnya</a>
+            <a href="chapter14.html">Chapter Selanjutnya</a>
+        </div>
+
+        <h2>Kasus Nyata: Menyimpan dan Membaca Log Proyek Energi Keterbaruan Eco Techno Leader</h2>
+        <p>Eco Techno Leader perlu menyimpan log produksi energi harian ke file dan membacanya untuk analisis. Kita akan gunakan file handling di Python untuk ini.</p>
+
+        <h3>Level Beginner: Menulis ke File</h3>
+        <p>Kita simpan log energi harian ke file.</p>
+        <div class="code-block">
+            <pre><code>with open("log_energi.txt", "w") as file:
+    file.write("Log Produksi Energi Harian\n")
+    file.write("Hari 1: 5000 kWh\n")
+    file.write("Hari 2: 4800 kWh\n")
+print("Log telah disimpan ke file.")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Log telah disimpan ke file.
+        </div>
+        <p><strong>Catatan:</strong> File <code>log_energi.txt</code> akan dibuat di folder tempat file Python dijalankan.</p>
+        <p><strong>Do:</strong> Gunakan <code>with</code> untuk otomatis menutup file setelah selesai.</p>
+        <p><strong>Don't:</strong> Jangan lupa tutup file kalau gak pake <code>with</code> (misalnya, <code>file.close()</code>).</p>
+
+        <h3>Level Intermediate: Membaca File</h3>
+        <p>Kita baca log dari file dan tampilkan.</p>
+        <div class="code-block">
+            <pre><code>with open("log_energi.txt", "r") as file:
+    isi_log = file.read()
+print("Isi log:")
+print(isi_log)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Isi log:<br>
+            Log Produksi Energi Harian<br>
+            Hari 1: 5000 kWh<br>
+            Hari 2: 4800 kWh
+        </div>
+        <p><strong>Do:</strong> Gunakan mode <code>"r"</code> untuk membaca file.</p>
+        <p><strong>Don't:</strong> Jangan pake mode <code>"w"</code> kalau cuma mau baca, soalnya akan hapus isi file.</p>
+
+        <h3>Level Advanced: Menulis dan Membaca List ke File</h3>
+        <p>Kita simpan list energi harian dan baca untuk analisis rata-rata.</p>
+        <div class="code-block">
+            <pre><code>energi_harian = [5000, 4800, 4500]
+# Tulis ke file
+with open("log_energi.txt", "w") as file:
+    for hari, energi in enumerate(energi_harian, start=1):
+        file.write(f"Hari {hari}: {energi} kWh\n")
+# Baca dan hitung rata-rata
+with open("log_energi.txt", "r") as file:
+    lines = file.readlines()
+energi_list = [int(line.split(": ")[1].split(" ")[0]) for line in lines]
+rata_rata = sum(energi_list) / len(energi_list)
+print("Rata-rata produksi energi:", rata_rata, "kWh")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Rata-rata produksi energi: 4766.666666666667 kWh
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>readlines()</code> untuk baca file per baris dan proses list.</p>
+        <p><strong>Don't:</strong> Jangan lupa tangani error kalau file gak ada (akan kita pelajari di chapter berikutnya).</p>
+
+        <div class="quote">
+            "Setiap log yang kamu simpan adalah bukti usahamu. Bersyukurlah kepada Tuhan atas kemampuan untuk terus mendokumentasikan perjalananmu! 📝"
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter12.html">Chapter Sebelumnya</a>
+            <a href="chapter14.html">Chapter Selanjutnya</a>
+        </div>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
