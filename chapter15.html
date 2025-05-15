@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 15: Object Oriented Programming (OOP) - Eco Techno Leader</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        h1, h2, h3 { color: #2c3e50; }
+        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 10px; border-radius: 5px; position: relative; margin: 10px 0; }
+        .copy-btn { position: absolute; top: 5px; right: 5px; background: #3498db; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+        .copy-btn:hover { background: #2980b9; }
+        .output { background: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; margin: 10px 0; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        .nav-links a:hover { color: #2980b9; }
+        .quote { font-style: italic; color: #555; text-align: center; margin: 20px 0; }
+        footer { text-align: center; margin-top: 40px; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 15: Object Oriented Programming (OOP)</h1>
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter14.html">Chapter Sebelumnya</a>
+        </div>
+
+        <h2>Kasus Nyata: Membuat Sistem Manajemen Proyek Energi Keterbaruan Eco Techno Leader</h2>
+        <p>Eco Techno Leader ingin membuat sistem untuk mengelola proyek energi keterbaruan, seperti panel surya atau turbin angin, menggunakan konsep OOP (Object-Oriented Programming). Sistem ini akan mencakup pembuatan class, method, inheritance, polymorphism, dan encapsulation untuk mengelola data proyek secara efisien.</p>
+
+        <h3>Level Beginner: Membuat Class Sederhana</h3>
+        <p>Class adalah blueprint untuk objek. Kita buat class untuk proyek energi.</p>
+        <div class="code-block">
+            <pre><code>class ProyekEnergi:
+    def __init__(self, nama, kapasitas):
+        self.nama = nama
+        self.kapasitas = kapasitas
+
+proyek1 = ProyekEnergi("Panel Surya Desa Makmur", 15000)
+print(f"Nama proyek: {proyek1.nama}")
+print(f"Kapasitas: {proyek1.kapasitas} watt")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Cara Copy-Paste ke VS Code:</strong></p>
+        <ol>
+            <li>Klik tombol "Copy" di atas.</li>
+            <li>Buka VS Code, buat file baru (Ctrl+N), lalu paste (Ctrl+V).</li>
+            <li>Simpan file dengan nama <code>proyek_energi.py</code> (Ctrl+S, tambahkan ekstensi .py).</li>
+            <li>Buka terminal di VS Code (Ctrl+`, atau klik Terminal > New Terminal).</li>
+            <li>Ketik <code>python proyek_energi.py</code> lalu Enter untuk jalankan.</li>
+        </ol>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Nama proyek: Panel Surya Desa Makmur<br>
+            Kapasitas: 15000 watt
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>__init__</code> untuk inisialisasi atribut objek.</p>
+        <p><strong>Don't:</strong> Jangan lupa pake <code>self</code> untuk akses atribut dalam class.</p>
+
+        <h3>Level Intermediate: Menambahkan Method ke Class</h3>
+        <p>Kita tambah method untuk menghitung efisiensi proyek.</p>
+        <div class="code-block">
+            <pre><code>class ProyekEnergi:
+    def __init__(self, nama, kapasitas, energi_output):
+        self.nama = nama
+        self.kapasitas = kapasitas
+        self.energi_output = energi_output
+    
+    def hitung_efisiensi(self):
+        return (self.energi_output / self.kapasitas) * 100
+
+proyek1 = ProyekEnergi("Panel Surya Desa Makmur", 15000, 12750)
+efisiensi = proyek1.hitung_efisiensi()
+print(f"Efisiensi {proyek1.nama}: {efisiensi}%")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Efisiensi Panel Surya Desa Makmur: 85.0%
+        </div>
+        <p><strong>Do:</strong> Buat method dalam class untuk fungsi yang terkait dengan objek.</p>
+        <p><strong>Don't:</strong> Jangan pake method untuk logika yang gak relevan dengan class, bikin fungsi biasa aja.</p>
+
+        <h3>Level Advanced: Inheritance, Polymorphism, dan Encapsulation</h3>
+        <p>Kita buat subclass untuk jenis proyek spesifik (panel surya dan turbin angin), terapkan polymorphism, dan gunakan encapsulation untuk melindungi data.</p>
+        <div class="code-block">
+            <pre><code>class ProyekEnergi:
+    def __init__(self, nama, kapasitas, energi_output):
+        self.nama = nama
+        self.__kapasitas = kapasitas  # private attribute
+        self.__energi_output = energi_output
+    
+    def hitung_efisiensi(self):
+        return (self.__energi_output / self.__kapasitas) * 100
+    
+    def get_kapasitas(self):  # getter
+        return self.__kapasitas
+    
+    def set_energi_output(self, energi_output):  # setter
+        if energi_output < 0:
+            print("Energi output tidak boleh negatif!")
+        else:
+            self.__energi_output = energi_output
+
+class ProyekPanelSurya(ProyekEnergi):
+    def __init__(self, nama, kapasitas, energi_output, jumlah_panel):
+        super().__init__(nama, kapasitas, energi_output)
+        self.jumlah_panel = jumlah_panel
+    
+    def hitung_efisiensi(self):  # polymorphism
+        efisiensi = super().hitung_efisiensi()
+        return efisiensi * 0.95  # efisiensi panel surya dikurangi 5% karena faktor lingkungan
+
+class ProyekTurbinAngin(ProyekEnergi):
+    def __init__(self, nama, kapasitas, energi_output, kecepatan_angin):
+        super().__init__(nama, kapasitas, energi_output)
+        self.kecepatan_angin = kecepatan_angin
+    
+    def hitung_efisiensi(self):  # polymorphism
+        efisiensi = super().hitung_efisiensi()
+        return efisiensi * (self.kecepatan_angin / 10)  # efisiensi bergantung pada kecepatan angin
+
+# Membuat objek
+proyek1 = ProyekPanelSurya("Panel Surya Desa Makmur", 15000, 12750, 50)
+proyek2 = ProyekTurbinAngin("Turbin Angin Desa Sejahtera", 20000, 18000, 8)
+print(f"Efisiensi {proyek1.nama}: {proyek1.hitung_efisiensi()}%")
+print(f"Efisiensi {proyek2.nama}: {proyek2.hitung_efisiensi()}%")
+print(f"Kapasitas {proyek1.nama}: {proyek1.get_kapasitas()} watt")
+proyek1.set_energi_output(-100)  # mencoba set energi output negatif
+proyek1.set_energi_output(13500)  # set energi output baru
+print(f"Efisiensi baru {proyek1.nama}: {proyek1.hitung_efisiensi()}%")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Efisiensi Panel Surya Desa Makmur: 80.75%<br>
+            Efisiensi Turbin Angin Desa Sejahtera: 72.0%<br>
+            Kapasitas Panel Surya Desa Makmur: 15000 watt<br>
+            Energi output tidak boleh negatif!<br>
+            Efisiensi baru Panel Surya Desa Makmur: 85.5%
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>super()</code> untuk memanggil method dari parent class, dan gunakan getter/setter untuk encapsulation.</p>
+        <p><strong>Don't:</strong> Jangan akses atribut private langsung (misalnya <code>proyek1.__kapasitas</code>), pake getter/setter aja.</p>
+
+        <div class="quote">
+            "Setiap sistem yang kamu buat adalah langkah menuju dunia yang lebih berkelanjutan. Bersyukurlah kepada Tuhan atas kemampuan untuk terus berinovasi! 🌍"
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter14.html">Chapter Sebelumnya</a>
+        </div>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
