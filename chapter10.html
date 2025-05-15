@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Sets and Frozensets in Python - Eco Techno Leader</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        h1, h2, h3 { color: #2c3e50; }
+        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 10px; border-radius: 5px; position: relative; margin: 10px 0; }
+        .copy-btn { position: absolute; top: 5px; right: 5px; background: #3498db; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+        .copy-btn:hover { background: #2980b9; }
+        .output { background: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; margin: 10px 0; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        .nav-links a:hover { color: #2980b9; }
+        .quote { font-style: italic; color: #555; text-align: center; margin: 20px 0; }
+        footer { text-align: center; margin-top: 40px; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 10: Sets and Frozensets in Python</h1>
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter9.html">Chapter Sebelumnya</a>
+            <a href="chapter11.html">Chapter Selanjutnya</a>
+        </div>
+
+        <h2>Kasus Nyata: Mengelola Jenis Teknologi Energi Keterbaruan Eco Techno Leader</h2>
+        <p>Eco Techno Leader ingin mengelola daftar jenis teknologi energi keterbaruan yang unik, seperti panel surya, turbin angin, dll. Kita akan gunakan <code>set</code> untuk data unik dan <code>frozenset</code> untuk data yang gak boleh diubah.</p>
+
+        <h3>Level Beginner: Membuat Set Sederhana</h3>
+        <p>Set adalah kumpulan data unik (gak boleh duplikat).</p>
+        <div class="code-block">
+            <pre><code>teknologi_energi = {"panel surya", "turbin angin", "panel surya"}  # duplikat akan dihapus
+print("Jenis teknologi energi:", teknologi_energi)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Jenis teknologi energi: {'panel surya', 'turbin angin'}
+        </div>
+        <p><strong>Do:</strong> Gunakan set untuk data yang harus unik.</p>
+        <p><strong>Don't:</strong> Jangan pake set kalau urutan data penting, soalnya set gak urut.</p>
+
+        <h3>Level Intermediate: Operasi Set</h3>
+        <p>Kita bandingkan teknologi yang digunakan di dua proyek.</p>
+        <div class="code-block">
+            <pre><code>teknologi_proyek1 = {"panel surya", "turbin angin"}
+teknologi_proyek2 = {"turbin angin", "biomassa"}
+teknologi_sama = teknologi_proyek1.intersection(teknologi_proyek2)
+teknologi_semua = teknologi_proyek1.union(teknologi_proyek2)
+print("Teknologi yang sama:", teknologi_sama)
+print("Semua teknologi:", teknologi_semua)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Teknologi yang sama: {'turbin angin'}<br>
+            Semua teknologi: {'panel surya', 'turbin angin', 'biomassa'}
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>intersection()</code> untuk data yang sama, dan <code>union()</code> untuk gabungkan data.</p>
+        <p><strong>Don't:</strong> Jangan ubah set saat sedang diulang (misalnya, dalam for loop), soalnya bisa error.</p>
+
+        <h3>Level Advanced: Frozenset untuk Data Tetap</h3>
+        <p>Kita gunakan <code>frozenset</code> untuk teknologi standar yang gak boleh diubah.</p>
+        <div class="code-block">
+            <pre><code>teknologi_standar = frozenset(["panel surya", "turbin angin"])
+teknologi_proyek = {"panel surya", "biomassa"}
+teknologi_belum_standar = teknologi_proyek.difference(teknologi_standar)
+print("Teknologi standar:", teknologi_standar)
+print("Teknologi yang belum standar:", teknologi_belum_standar)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Teknologi standar: frozenset({'panel surya', 'turbin angin'})<br>
+            Teknologi yang belum standar: {'biomassa'}
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>frozenset</code> untuk data yang gak boleh diubah sama sekali.</p>
+        <p><strong>Don't:</strong> Jangan coba ubah <code>frozenset</code> (misalnya, dengan <code>add()</code>), soalnya akan error.</p>
+
+        <div class="quote">
+            "Keunikan dalam setiap langkahmu adalah anugerah dari Tuhan. Teruslah belajar untuk menciptakan solusi yang bermanfaat! 🌞"
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter9.html">Chapter Sebelumnya</a>
+            <a href="chapter11.html">Chapter Selanjutnya</a>
+        </div>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
