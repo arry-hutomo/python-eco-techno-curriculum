@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11: Dictionaries in Python - Eco Techno Leader</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        h1, h2, h3 { color: #2c3e50; }
+        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 10px; border-radius: 5px; position: relative; margin: 10px 0; }
+        .copy-btn { position: absolute; top: 5px; right: 5px; background: #3498db; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+        .copy-btn:hover { background: #2980b9; }
+        .output { background: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; margin: 10px 0; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        .nav-links a:hover { color: #2980b9; }
+        .quote { font-style: italic; color: #555; text-align: center; margin: 20px 0; }
+        footer { text-align: center; margin-top: 40px; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 11: Dictionaries in Python</h1>
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter10.html">Chapter Sebelumnya</a>
+            <a href="chapter12.html">Chapter Selanjutnya</a>
+        </div>
+
+        <h2>Kasus Nyata: Menyimpan Data Proyek Energi Keterbaruan Eco Techno Leader</h2>
+        <p>Eco Techno Leader perlu menyimpan data proyek energi keterbaruan dalam format pasangan kunci-nilai, seperti nama proyek, kapasitas, dan lokasi. Kita akan gunakan <code>dictionary</code> untuk ini.</p>
+
+        <h3>Level Beginner: Membuat Dictionary Sederhana</h3>
+        <p>Dictionary menyimpan data dalam pasangan kunci-nilai.</p>
+        <div class="code-block">
+            <pre><code>proyek_energi = {"nama": "Proyek Panel Surya", "kapasitas": 15000, "lokasi": "Desa Makmur"}
+print("Data proyek:", proyek_energi)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Data proyek: {'nama': 'Proyek Panel Surya', 'kapasitas': 15000, 'lokasi': 'Desa Makmur'}
+        </div>
+        <p><strong>Do:</strong> Gunakan dictionary untuk data yang berpasangan (kunci-nilai).</p>
+        <p><strong>Don't:</strong> Jangan pake kunci yang gak unik (misalnya, dua kunci <code>"nama"</code>), soalnya akan overwrite.</p>
+
+        <h3>Level Intermediate: Mengakses dan Mengubah Dictionary</h3>
+        <p>Kita akses data dan tambah informasi baru.</p>
+        <div class="code-block">
+            <pre><code>proyek_energi = {"nama": "Proyek Panel Surya", "kapasitas": 15000, "lokasi": "Desa Makmur"}
+print("Kapasitas proyek:", proyek_energi["kapasitas"])
+proyek_energi["status"] = "Aktif"  # tambah data baru
+print("Data proyek setelah update:", proyek_energi)
+for kunci, nilai in proyek_energi.items():
+    print(f"{kunci}: {nilai}")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Kapasitas proyek: 15000<br>
+            Data proyek setelah update: {'nama': 'Proyek Panel Surya', 'kapasitas': 15000, 'lokasi': 'Desa Makmur', 'status': 'Aktif'}<br>
+            nama: Proyek Panel Surya<br>
+            kapasitas: 15000<br>
+            lokasi: Desa Makmur<br>
+            status: Aktif
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>items()</code> untuk ulang kunci dan nilai sekaligus.</p>
+        <p><strong>Don't:</strong> Jangan akses kunci yang gak ada tanpa cek (misalnya <code>proyek_energi["tahun"]</code>), soalnya akan error (pake <code>get()</code> aja).</p>
+
+        <h3>Level Advanced: Dictionary Comprehension untuk Analisis</h3>
+        <p>Kita buat dictionary baru untuk menghitung pajak proyek (20% dari kapasitas).</p>
+        <div class="code-block">
+            <pre><code>proyek_energi = [
+    {"nama": "Proyek Panel Surya", "kapasitas": 15000},
+    {"nama": "Proyek Turbin Angin", "kapasitas": 25000}
+]
+pajak_proyek = {proyek["nama"]: proyek["kapasitas"] * 0.2 for proyek in proyek_energi}
+print("Pajak per proyek:", pajak_proyek)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Pajak per proyek: {'Proyek Panel Surya': 3000.0, 'Proyek Turbin Angin': 5000.0}
+        </div>
+        <p><strong>Do:</strong> Gunakan dictionary comprehension untuk transformasi data yang efisien.</p>
+        <p><strong>Don't:</strong> Jangan pake dictionary comprehension kalau logikanya terlalu rumit, biar gak susah dibaca.</p>
+
+        <div class="quote">
+            "Setiap data yang kamu kelola adalah langkah menuju solusi besar. Bersyukurlah kepada Tuhan atas kemampuan untuk terus berkontribusi! 🌿"
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter10.html">Chapter Sebelumnya</a>
+            <a href="chapter12.html">Chapter Selanjutnya</a>
+        </div>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
