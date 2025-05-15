@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: For Loops - Eco Techno Leader</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        h1, h2, h3 { color: #2c3e50; }
+        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 10px; border-radius: 5px; position: relative; margin: 10px 0; }
+        .copy-btn { position: absolute; top: 5px; right: 5px; background: #3498db; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+        .copy-btn:hover { background: #2980b9; }
+        .output { background: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; margin: 10px 0; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        .nav-links a:hover { color: #2980b9; }
+        .quote { font-style: italic; color: #555; text-align: center; margin: 20px 0; }
+        footer { text-align: center; margin-top: 40px; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 6: For Loops</h1>
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter5.html">Chapter Sebelumnya</a>
+            <a href="chapter7.html">Chapter Selanjutnya</a>
+        </div>
+
+        <h2>Kasus Nyata: Menghitung Produksi Energi Harian Eco Techno Leader</h2>
+        <p>Eco Techno Leader ingin menghitung produksi energi harian dari panel surya selama seminggu. Kita akan gunakan <code>for</code> loop untuk ini.</p>
+
+        <h3>Level Beginner: For Loop dengan range()</h3>
+        <p>Kita hitung energi harian selama 7 hari.</p>
+        <div class="code-block">
+            <pre><code>energi_per_hari = 5000  # kWh per hari
+for hari in range(1, 8):  # 1 sampai 7
+    print(f"Hari {hari}: {energi_per_hari} kWh")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Hari 1: 5000 kWh<br>
+            Hari 2: 5000 kWh<br>
+            Hari 3: 5000 kWh<br>
+            Hari 4: 5000 kWh<br>
+            Hari 5: 5000 kWh<br>
+            Hari 6: 5000 kWh<br>
+            Hari 7: 5000 kWh
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>range()</code> untuk bikin urutan angka.</p>
+        <p><strong>Don't:</strong> Jangan lupa <code>range(1, 8)</code> artinya dari 1 sampai 7 (8 gak termasuk).</p>
+
+        <h3>Level Intermediate: For Loop dengan continue</h3>
+        <p>Kita skip hari libur (misalnya, hari ke-7).</p>
+        <div class="code-block">
+            <pre><code>energi_per_hari = 5000
+for hari in range(1, 8):
+    if hari == 7:  # hari libur
+        continue
+    print(f"Hari {hari}: {energi_per_hari} kWh")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Hari 1: 5000 kWh<br>
+            Hari 2: 5000 kWh<br>
+            Hari 3: 5000 kWh<br>
+            Hari 4: 5000 kWh<br>
+            Hari 5: 5000 kWh<br>
+            Hari 6: 5000 kWh
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>continue</code> untuk skip iterasi tertentu.</p>
+        <p><strong>Don't:</strong> Jangan pake <code>continue</code> kalau gak perlu, biar kode gak membingungkan.</p>
+
+        <h3>Level Advanced: For Loop dengan break dan else</h3>
+        <p>Kita berhenti menghitung kalau produksi energi turun di bawah batas tertentu.</p>
+        <div class="code-block">
+            <pre><code>energi_harian = [5000, 4800, 4500, 4000, 3000, 5000, 5000]
+batas_minimum = 3500
+for hari, energi in enumerate(energi_harian, start=1):
+    if energi < batas_minimum:
+        print(f"Produksi energi di Hari {hari} ({energi} kWh) di bawah batas, menghentikan perhitungan.")
+        break
+    print(f"Hari {hari}: {energi} kWh")
+else:
+    print("Semua hari memenuhi batas minimum.")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Hari 1: 5000 kWh<br>
+            Hari 2: 4800 kWh<br>
+            Hari 3: 4500 kWh<br>
+            Hari 4: 4000 kWh<br>
+            Produksi energi di Hari 5 (3000 kWh) di bawah batas, menghentikan perhitungan.
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>enumerate()</code> untuk dapetin indeks dan nilai sekaligus.</p>
+        <p><strong>Don't:</strong> Jangan lupa <code>else</code> di for loop hanya jalan kalau loop selesai tanpa <code>break</code>.</p>
+
+        <div class="quote">
+            "Setiap pengulangan yang kamu pelajari membawa kamu lebih dekat ke tujuan. Bersyukurlah kepada Tuhan atas kesempatan untuk terus berkembang! 🌍"
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter5.html">Chapter Sebelumnya</a>
+            <a href="chapter7.html">Chapter Selanjutnya</a>
+        </div>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
