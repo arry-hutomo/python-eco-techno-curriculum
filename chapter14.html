@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 14: Exceptions Handling - Eco Techno Leader</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        h1, h2, h3 { color: #2c3e50; }
+        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 10px; border-radius: 5px; position: relative; margin: 10px 0; }
+        .copy-btn { position: absolute; top: 5px; right: 5px; background: #3498db; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+        .copy-btn:hover { background: #2980b9; }
+        .output { background: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; margin: 10px 0; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        .nav-links a:hover { color: #2980b9; }
+        .quote { font-style: italic; color: #555; text-align: center; margin: 20px 0; }
+        footer { text-align: center; margin-top: 40px; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 14: Exceptions Handling</h1>
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter13.html">Chapter Sebelumnya</a>
+            <a href="chapter15.html">Chapter Selanjutnya</a>
+        </div>
+
+        <h2>Kasus Nyata: Menangani Error pada Sistem Monitoring Energi Eco Techno Leader</h2>
+        <p>Eco Techno Leader perlu menangani error saat monitoring energi, seperti pembagian nol atau file tidak ditemukan. Kita akan gunakan <code>try-except</code> untuk ini.</p>
+
+        <h3>Level Beginner: Menangani ZeroDivisionError</h3>
+        <p>Kita coba hitung efisiensi, tapi energi inputnya nol.</p>
+        <div class="code-block">
+            <pre><code>try:
+    energi_input = 0
+    energi_output = 850
+    efisiensi = (energi_output / energi_input) * 100
+    print("Efisiensi:", efisiensi)
+except ZeroDivisionError:
+    print("Error: Energi input tidak boleh nol!")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Error: Energi input tidak boleh nol!
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>try-except</code> untuk tangani error tertentu.</p>
+        <p><strong>Don't:</strong> Jangan biarkan error tanpa penanganan, soalnya program akan crash.</p>
+
+        <h3>Level Intermediate: Menangani FileNotFoundError</h3>
+        <p>Kita coba baca file log yang gak ada.</p>
+        <div class="code-block">
+            <pre><code>try:
+    with open("log_energi_hilang.txt", "r") as file:
+        isi_log = file.read()
+    print(isi_log)
+except FileNotFoundError:
+    print("Error: File log tidak ditemukan, pastikan file ada!")
+except Exception as e:
+    print("Error lain terjadi:", e)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Error: File log tidak ditemukan, pastikan file ada!
+        </div>
+        <p><strong>Do:</strong> Gunakan exception spesifik (<code>FileNotFoundError</code>) sebelum exception umum (<code>Exception</code>).</p>
+        <p><strong>Don't:</strong> Jangan pake <code>Exception</code> aja tanpa spesifik, soalnya gak jelas errornya apa.</p>
+
+        <h3>Level Advanced: Menggunakan else dan finally</h3>
+        <p>Kita tangani error lengkap saat menghitung rata-rata dari file log.</p>
+        <div class="code-block">
+            <pre><code>try:
+    with open("log_energi.txt", "r") as file:
+        lines = file.readlines()
+    energi_list = [int(line.split(": ")[1].split(" ")[0]) for line in lines]
+except FileNotFoundError:
+    print("Error: File log tidak ditemukan!")
+except ValueError:
+    print("Error: Data di file tidak valid!")
+else:
+    rata_rata = sum(energi_list) / len(energi_list)
+    print("Rata-rata produksi energi:", rata_rata, "kWh")
+finally:
+    print("Proses selesai, lanjutkan monitoring.")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt (jika file ada dan valid):</strong></p>
+        <div class="output">
+            Rata-rata produksi energi: 4766.666666666667 kWh<br>
+            Proses selesai, lanjutkan monitoring.
+        </div>
+        <p><strong>Do:</strong> Gunakan <code>else</code> untuk kode yang hanya jalan kalau gak ada error, dan <code>finally</code> untuk kode yang selalu jalan.</p>
+        <p><strong>Don't:</strong> Jangan pake <code>finally</code> untuk kode yang gak perlu dijalankan setiap saat.</p>
+
+        <div class="quote">
+            "Setiap error adalah pelajaran. Bersyukurlah kepada Tuhan karena kamu diberi kesempatan untuk terus memperbaiki diri! ⚙️"
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter13.html">Chapter Sebelumnya</a>
+            <a href="chapter15.html">Chapter Selanjutnya</a>
+        </div>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
