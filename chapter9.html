@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Python Tuples - Eco Techno Leader</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        h1, h2, h3 { color: #2c3e50; }
+        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 10px; border-radius: 5px; position: relative; margin: 10px 0; }
+        .copy-btn { position: absolute; top: 5px; right: 5px; background: #3498db; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+        .copy-btn:hover { background: #2980b9; }
+        .output { background: #f4f4f4; padding: 10px; border-left: 4px solid #3498db; margin: 10px 0; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        .nav-links a:hover { color: #2980b9; }
+        .quote { font-style: italic; color: #555; text-align: center; margin: 20px 0; }
+        footer { text-align: center; margin-top: 40px; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chapter 9: Python Tuples</h1>
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter8.html">Chapter Sebelumnya</a>
+            <a href="chapter10.html">Chapter Selanjutnya</a>
+        </div>
+
+        <h2>Kasus Nyata: Menyimpan Data Koordinat Lokasi Proyek Eco Techno Leader</h2>
+        <p>Eco Techno Leader perlu menyimpan koordinat lokasi proyek energi keterbaruan yang tidak boleh diubah (immutable). Kita akan gunakan <code>tuple</code> untuk ini.</p>
+
+        <h3>Level Beginner: Membuat Tuple Sederhana</h3>
+        <p>Tuple adalah daftar yang gak bisa diubah. Kita simpan koordinat lokasi proyek.</p>
+        <div class="code-block">
+            <pre><code>koordinat_desa_makmur = (-7.123, 112.456)  # latitude, longitude
+print("Koordinat Desa Makmur:", koordinat_desa_makmur)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Koordinat Desa Makmur: (-7.123, 112.456)
+        </div>
+        <p><strong>Do:</strong> Gunakan tuple untuk data yang gak boleh diubah, seperti koordinat.</p>
+        <p><strong>Don't:</strong> Jangan lupa tambah tanda koma kalau tuple cuma punya 1 elemen (misalnya <code>(5,)</code>).</p>
+
+        <h3>Level Intermediate: Mengakses dan Mengulang Tuple</h3>
+        <p>Kita akses koordinat dan ulang isi tuple.</p>
+        <div class="code-block">
+            <pre><code>koordinat_desa_makmur = (-7.123, 112.456)
+latitude = koordinat_desa_makmur[0]
+longitude = koordinat_desa_makmur[1]
+print(f"Latitude: {latitude}, Longitude: {longitude}")
+for koordinat in koordinat_desa_makmur:
+    print("Koordinat:", koordinat)</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Latitude: -7.123, Longitude: 112.456<br>
+            Koordinat: -7.123<br>
+            Koordinat: 112.456
+        </div>
+        <p><strong>Do:</strong> Gunakan indexing (<code>[0]</code>, <code>[1]</code>) untuk akses elemen tuple.</p>
+        <p><strong>Don't:</strong> Jangan coba ubah isi tuple (misalnya <code>koordinat_desa_makmur[0] = 5</code>), soalnya akan error.</p>
+
+        <h3>Level Advanced: Tuple untuk Data Proyek yang Kompleks</h3>
+        <p>Kita simpan data proyek yang lebih kompleks dengan tuple bersarang.</p>
+        <div class="code-block">
+            <pre><code>data_proyek = (
+    ("Desa Makmur", (-7.123, 112.456), 50),  # nama, koordinat, jumlah panel
+    ("Desa Sejahtera", (-7.234, 112.567), 40)
+)
+for proyek in data_proyek:
+    nama, (lat, lon), panel = proyek
+    print(f"Proyek di {nama}: Koordinat ({lat}, {lon}), Jumlah panel: {panel}")</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <p><strong>Hasil di Command Prompt:</strong></p>
+        <div class="output">
+            Proyek di Desa Makmur: Koordinat (-7.123, 112.456), Jumlah panel: 50<br>
+            Proyek di Desa Sejahtera: Koordinat (-7.234, 112.567), Jumlah panel: 40
+        </div>
+        <p><strong>Do:</strong> Gunakan tuple bersarang untuk data yang terstruktur dan gak boleh diubah.</p>
+        <p><strong>Don't:</strong> Jangan pake tuple kalau datanya sering berubah, pake <code>list</code> aja.</p>
+
+        <div class="quote">
+            "Data yang terjaga adalah langkah awal menuju keberhasilan. Bersyukurlah kepada Tuhan atas kemampuan untuk mengelola dengan baik! 🌐"
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Kembali ke Daftar Isi</a>
+            <a href="chapter8.html">Chapter Sebelumnya</a>
+            <a href="chapter10.html">Chapter Selanjutnya</a>
+        </div>
+
+        <footer>
+            <p>Dibuat dengan 💖 oleh Arry Hutomo - Eco Techno Leader</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = 'Copied!';
+                setTimeout(() => button.innerText = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
